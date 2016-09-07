@@ -1,0 +1,1584 @@
+@charset "UTF-8";
+
+/* disable h5bp print style printing out the link href*/
+
+abbr[title]:after,
+a[href]:after {
+    content: "";
+}
+
+
+/*!
+Typeplate : Starter Kit
+URL ........... http://typeplate.com
+Version ....... 3.0.2
+Github ........ https://github.com/typeplate/starter-kit
+Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+License ....... Creative Commmons Attribution 3.0
+License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+*/
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+0026;
+}
+
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C;
+}
+
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+  color: #222;
+}
+
+blockquote + figcaption cite {
+  display: block;
+  font-size: inherit;
+  text-align: right;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+pre code {
+  word-wrap: normal;
+}
+
+html {
+  font: normal 100% / 1.65 serif;
+}
+
+body {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #444;
+}
+
+.typl8-tera {
+  font-size: 6.5em;
+  margin-bottom: 3.93939rem;
+}
+
+.typl8-giga {
+  font-size: 5em;
+  margin-bottom: 3.0303rem;
+}
+
+.typl8-mega {
+  font-size: 4em;
+  margin-bottom: 2.42424rem;
+}
+
+.typl8-alpha {
+  font-size: 3.33333em;
+  margin-bottom: 2.0202rem;
+}
+
+.typl8-beta, h1 {
+  font-size: 2.66667em;
+  margin-bottom: 1.61616rem;
+}
+
+.typl8-gamma, h2 {
+  font-size: 2em;
+  margin-bottom: 1.21212rem;
+}
+
+.typl8-delta, h3 {
+  font-size: 1.33333em;
+  margin-bottom: 0.80808rem;
+}
+
+.typl8-epsilon, h4 {
+  font-size: 1.16667em;
+  margin-bottom: 0.70707rem;
+}
+
+.typl8-zeta, h5 {
+  font-size: 1em;
+  margin-bottom: 0.60606rem;
+}
+
+p {
+  margin: auto auto 1.5rem;
+}
+
+p + p {
+  text-indent: 1.5rem;
+  margin-top: -1.5rem;
+}
+
+small {
+  font-size: 65%;
+}
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre {
+  white-space: pre;
+}
+
+pre code {
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+
+abbr[title]:hover {
+  cursor: help;
+}
+
+.typl8-drop-cap:first-letter {
+  float: left;
+  margin: 10px 10px 0 0;
+  padding: 0 20px;
+  font-size: 4em;
+  font-family: inherit;
+  line-height: 1;
+  text-indent: 0;
+  background: transparent;
+  color: inherit;
+}
+
+p + .typl8-drop-cap {
+  text-indent: 0;
+  margin-top: 0;
+}
+
+/**
+ * Lining Definition Style Markup
+ *
+  <dl class="typl8-lining">
+    <dt><b></b></dt>
+    <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.typl8-lining dt,
+.typl8-lining dd {
+  display: inline;
+  margin: 0;
+}
+
+.typl8-lining dt + dt:before,
+.typl8-lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+
+.typl8-lining dd + dd:before {
+  content: ", ";
+}
+
+.typl8-lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/**
+ * Dictionary Definition Style Markup
+ *
+  <dl class="typl8-dictionary-style">
+    <dt><b></b></dt>
+    <dd></dd>
+  </dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.typl8-dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+
+.typl8-dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+
+.typl8-dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+
+.typl8-dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+/**
+ * Blockquote Markup
+ *
+    <figure>
+      <blockquote cite="">
+        <p></p>
+      </blockquote>
+      <figcaption>
+        <cite>
+          <small><a href=""></a></small>
+        </cite>
+      </figcaption>
+    </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Pull Quotes Markup
+ *
+  <aside class="typl8-pull-quote">
+    <blockquote>
+      <p></p>
+    </blockquote>
+  </aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+.typl8-pull-quote {
+  position: relative;
+  padding: 1em;
+}
+
+.typl8-pull-quote:before, .typl8-pull-quote:after {
+  height: 1em;
+  opacity: 0.5;
+  position: absolute;
+  font-size: 4em;
+  color: #dc976e;
+}
+
+.typl8-pull-quote:before {
+  content: '“';
+  top: 0;
+  left: 0;
+}
+
+.typl8-pull-quote:after {
+  content: '”';
+  bottom: 0;
+  right: 0;
+}
+
+/**
+ * Figures Markup
+ *
+  <figure>
+    <figcaption>
+      <strong>Fig. X.X | </strong><cite title=""></cite>
+    </figcaption>
+  </figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+  <article>
+    <p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+    <footer>
+      <ol class="foot-notes">
+        <li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+      </ol>
+    </footer>
+  </article>
+ *
+ * Extend this object into your markup.
+ *
+ */
+
+
+.CLFSBCateg {
+  line-height: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height: 20px;
+  overflow: hidden;
+  font-size: 11px;
+  display: block;
+  color: #0D5A90;
+  font-weight: 700
+}
+
+.CLFSBTerm {
+  padding-right: 125px;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  color: #000;
+  margin-left: .1in
+}
+
+.CLFSBFrame {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  color: #000;
+  margin-left: .1in
+}
+
+.CLFSBHeader {
+  display: block;
+  margin: -5px -5px 10px -5px;
+  font-weight: 700;
+  background: #f5f4f3;
+  padding: 5px 3px;
+  color: #0B4C77;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px
+}
+
+.CLFSBHeaderCaption {
+  float: left
+}
+
+.CLFSBTextWithLink {
+  cursor: pointer;
+  height: 16px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  margin-top: 4px
+}
+
+.CLFSBListOfAttributesValues {
+  margin-top: 1px;
+  margin-bottom: 1px
+}
+
+.CLFSBMetadata {
+  font-size: xx-small;
+  color: #9f9f9f;
+  margin-left: 4px
+}
+
+.CLFSBRelevanceIMG {
+  position: absolute;
+  top: 4px;
+  right: 50px
+}
+
+.CLFSBLinkToPermIMG {
+  position: absolute;
+  top: 0;
+  right: 27px;
+  cursor: pointer;
+  width: 15px
+}
+
+.CLFSBTopic {
+  line-height: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: block;
+  color: #0D5A90
+}
+
+.CLFSBTopicNoHieght {
+  line-height: 20px;
+  font-size: 11px;
+  display: block;
+  color: #0D5A90
+}
+
+.CLFSBTopicTXT {
+  float: left;
+  width: 85%;
+  height: 20px;
+  overflow: hidden
+}
+
+.CLFSBTopicTXTNOVF {
+  width: 88%
+}
+
+.CLFSBTopicPRC {
+  float: right
+}
+
+.CLFSBSocialTag {
+  line-height: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: block;
+  color: #0D5A90
+}
+
+.CLFSBSocialTagTXT {
+  float: left;
+  width: 85%;
+  height: 20px;
+  overflow: hidden
+}
+
+.CLFHighlightAllNone,.CLFSBSocialTagIMG {
+  float: right
+}
+
+.CLFclearhighlights,.CLFhighlightsall {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  margin-right: 4px
+}
+
+
+.DISABLECLFTermInsideFrameCLFHighlightDISABLE {
+  background: orange;
+  color: #fff;
+  font-weight: 700
+}
+
+.CLFAnyTermHighlight {
+  border-bottom: double #E9EA87;
+  font-weight: 700
+}
+
+.CLFCityCLFHighlight {
+  border-bottom: double #00FE64
+}
+
+.CLFCompanyCLFHighlight {
+  border-bottom: double #FE6C00
+}
+
+.CLFContinentCLFHighlight {
+  border-bottom: double red
+}
+
+.CLFCountryCLFHighlight {
+  border-bottom: double #AEFE00
+}
+
+.CLFDateCLFHighlight {
+  border-bottom: double #E7904A
+}
+
+.CLFEmailAddressCLFHighlight {
+  border-bottom: double #FED700
+}
+
+.CLFFunctionEventCLFHighlight {
+  border-bottom: double #00FEFE
+}
+
+.CLFHolidayCLFHighlight {
+  border-bottom: double #2BFE00
+}
+
+.CLFIndustryTermCLFHighlight {
+  border-bottom: double #FFB400
+}
+
+.CLFMoneyAmountCLFHighlight {
+  border-bottom: double #0063FE
+}
+
+.CLFNaturalFeatureCLFHighlight {
+  border-bottom: double #AF00FE
+}
+
+.CLFOrganizationCLFHighlight {
+  border-bottom: double #FE00D6
+}
+
+.CLFOrganizationDescriptionCLFHighlight {
+  border-bottom: double #FB171B
+}
+
+.CLFPersonCLFHighlight {
+  border-bottom: double #8000FF
+}
+
+.CLFPersonDescriptionCLFHighlight {
+  border-bottom: double #FF0D89
+}
+
+.CLFPhoneNumberCLFHighlight {
+  border-bottom: double #EF3FFD
+}
+
+.CLFProductCLFHighlight {
+  border-bottom: double #C39370
+}
+
+.CLFProvinceOrStateCLFHighlight {
+  border-bottom: double #00FE64
+}
+
+.CLFRegionCLFHighlight {
+  border-bottom: double #FE6C00
+}
+
+.CLFTechnologyCLFHighlight {
+  border-bottom: double red
+}
+
+.CLFTimeCLFHighlight {
+  border-bottom: double #AEFE00
+}
+
+.CLFURLCLFHighlight {
+  border-bottom: double #8000FF
+}
+
+.CLFWeaponCLFHighlight {
+  border-bottom: double #FED700
+}
+
+.CLFCompanyRegistrationAuthorityCLFHighlight {
+  border-bottom: double #00FE64
+}
+
+.CLFCompanyRegistrationNumberCLFHighlight {
+  border-bottom: double #FE6C00
+}
+
+.CLFCounterpartySubtypeCLFHighlight {
+  border-bottom: double #EF3FFD
+}
+
+.CLFDateOfIncorporationCLFHighlight {
+  border-bottom: double #2F4F4F
+}
+
+.CLFEntityURLCLFHighlight {
+  border-bottom: double #E7904A
+}
+
+.CLFHQFaxNumberCLFHighlight {
+  border-bottom: double #FED700
+}
+
+.CLFHQTelephoneNumberCLFHighlight {
+  border-bottom: double #00FEFE
+}
+
+.CLFJurisdictionOfIncorporationCLFHighlight {
+  border-bottom: double #C39370
+}
+
+.CLFLegalNameCLFHighlight {
+  border-bottom: double #FFB400
+}
+
+.CLFSourceURLCLFHighlight {
+  border-bottom: double #0063FE
+}
+
+.CLFTradingNameCLFHighlight {
+  border-bottom: double #AF00FE
+}
+
+.CLFSBCategAddress,.CLFSBCategDocReportPeriod,.CLFSBCategDocType {
+  border-bottom: double #E9EA87
+}
+
+.CLFAnyEventHighlight {
+  background-color: #FEFF99
+}
+
+.CLFAcquisitionCLFHighlight {
+  background-color: #7FFEB1
+}
+
+.CLFAllianceCLFHighlight {
+  background-color: #FEB57F
+}
+
+.CLFAnalystEarningsEstimateCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFAnalystRecommendationCLFHighlight {
+  background-color: #D6FE7F
+}
+
+.CLFArrestCLFHighlight {
+  background-color: #BF7FFF
+}
+
+.CLFBusinessRelationCLFHighlight {
+  background-color: #7FFEFE
+}
+
+.CLFBuybacksCLFHighlight {
+  background-color: #94FE7F
+}
+
+.CLFCompanyAffiliatesCLFHighlight {
+  background-color: #FFD97F
+}
+
+.CLFCompanyCustomerCLFHighlight {
+  background-color: #7FB0FE
+}
+
+.CLFCompanyEarningsAnnouncementCLFHighlight {
+  background-color: #D67FFE
+}
+
+.CLFCompanyEarningsGuidanceCLFHighlight {
+  background-color: #FE7FEA
+}
+
+.CLFCompanyIndustryCLFHighlight {
+  background-color: #FB898B
+}
+
+.CLFCompanyInvestmentCLFHighlight {
+  background-color: #F69EFD
+}
+
+.CLFCompanyLegalIssuesCLFHighlight {
+  background-color: #FF86C4
+}
+
+.CLFCompanyLocationCLFHighlight {
+  background-color: #E7BB98
+}
+
+.CLFCompanyProductCLFHighlight {
+  background-color: #C3AB99
+}
+
+.CLFCompanySynonymCLFHighlight {
+  background-color: #FDCF87
+}
+
+.CLFCompanyTechnologyCLFHighlight {
+  background-color: #B5BDF3
+}
+
+.CLFCompanyTickerCLFHighlight {
+  background-color: #A4D2DE
+}
+
+.CLFCompanyUsingProductCLFHighlight {
+  background-color: #FDB4FF
+}
+
+.CLFConvictionCLFHighlight {
+  background-color: #D9D8A0
+}
+
+.CLFCreditRatingCLFHighlight {
+  background-color: #FBDAA5
+}
+
+.CLFEmployeeOfCLFHighlight {
+  background-color: #A0E6EF
+}
+
+.CLFFDAPhaseCLFHighlight {
+  background-color: #E0DFB3
+}
+
+.CLFFamilyRelationCLFHighlight {
+  background-color: #EAEBA0
+}
+
+.CLFFinancialTransactionCLFHighlight {
+  background-color: #FFBEBB
+}
+
+.CLFIndictmentCLFHighlight {
+  background-color: #FE7FB4
+}
+
+.CLFJointVentureCLFHighlight {
+  background-color: #B37FFE
+}
+
+.CLFLeaderOfCLFHighlight {
+  background-color: #7FD4FE
+}
+
+.CLFManagementChangeCLFHighlight {
+  background-color: #FF7FD9
+}
+
+.CLFMemberOfCLFHighlight {
+  background-color: #7FFEB1
+}
+
+.CLFMergerCLFHighlight {
+  background-color: #FEB57F
+}
+
+.CLFMoneyLaunderingCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFPercentTrendCLFHighlight {
+  background-color: #D6FE7F
+}
+
+.CLFPersonCommunicationCLFHighlight {
+  background-color: #BF7FFF
+}
+
+.CLFPersonDetailsCLFHighlight {
+  background-color: #FEEA7F
+}
+
+.CLFPersonEducationCLFHighlight {
+  background-color: #7FFEFE
+}
+
+.CLFPersonPoliticalCLFHighlight {
+  background-color: #94FE7F
+}
+
+.CLFPersonPoliticalPastCLFHighlight {
+  background-color: #FFD97F
+}
+
+.CLFPersonProfessionalCLFHighlight {
+  background-color: #7FB0FE
+}
+
+.CLFPersonProfessionalPastCLFHighlight {
+  background-color: #D67FFE
+}
+
+.CLFPersonTravelCLFHighlight {
+  background-color: #FE7FEA
+}
+
+.CLFProductIssuesCLFHighlight {
+  background-color: #FB898B
+}
+
+.CLFProductRecallCLFHighlight {
+  background-color: #F69EFD
+}
+
+.CLFProductReleaseCLFHighlight {
+  background-color: #FF86C4
+}
+
+.CLFStockSplitCLFHighlight {
+  background-color: #E7BB98
+}
+
+.CLFTechnologyOwnershipCLFHighlight {
+  background-color: #C3AB99
+}
+
+.CLFTrialCLFHighlight {
+  background-color: #FDCF87
+}
+
+.CLFHQAddressCLFHighlight,.CLFRegisteredAddressCLFHighlight {
+  background-color: #FFB400
+}
+
+.CLFTaxInformationCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFAcummulatedIntangibleAmortizationCLFHighlight {
+  background-color: #FEFF99
+}
+
+.CLFAdvertisingExpenseCLFHighlight {
+  background-color: #7FFEB1
+}
+
+.CLFAmortizationOfIntangiblesCLFHighlight {
+  background-color: #FEB57F
+}
+
+.CLFCapitalizedInterestCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFDeferredRevenueCLFHighlight {
+  background-color: pink
+}
+
+.CLFDepreciationExpenseCLFHighlight {
+  background-color: #FF1493
+}
+
+.CLFEmployeeNumberCLFHighlight {
+  background-color: #DEB887
+}
+
+.CLFInterestExpenseCLFHighlight {
+  background-color: #7FFEFE
+}
+
+.CLFNumberOfShareholdersCLFHighlight {
+  background-color: #0F0
+}
+
+.CLFRentalExpensesCLFHighlight {
+  background-color: #FFD97F
+}
+
+.CLFResearchAndDevelopmentExpenseCLFHighlight {
+  background-color: #7FB0FE
+}
+
+.CLFUnusualChargesCLFHighlight {
+  background-color: #D67FFE
+}
+
+.CLFBusinessDealsCLFHighlight {
+  background-color: #7FFEB1
+}
+
+.CLFStrategicCombinationsCLFHighlight {
+  background-color: #FEB57F
+}
+
+.CLFNewBusinessOrUnitOrSubsidiaryCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFNewMarketCLFHighlight {
+  background-color: #D6FE7F
+}
+
+.CLFGeneralProductsCLFHighlight {
+  background-color: #BF7FFF
+}
+
+.CLFProductionGuidanceCLFHighlight {
+  background-color: #FEEA7F
+}
+
+.CLFMergersAndAcquisitionsCLFHighlight {
+  background-color: #7FFEFE
+}
+
+.CLFDivestituresCLFHighlight {
+  background-color: #94FE7F
+}
+
+.CLFSpinoffsCLFHighlight {
+  background-color: #FFD97F
+}
+
+.CLFEquityInvestmentsCLFHighlight {
+  background-color: #7FB0FE
+}
+
+.CLFShareRepurchasesCLFHighlight {
+  background-color: #D67FFE
+}
+
+.CLFEquityFinancingCLFHighlight {
+  background-color: #FE7FEA
+}
+
+.CLFDebtFinancingCLFHighlight {
+  background-color: #FB898B
+}
+
+.CLFInitialPublicOfferingsCLFHighlight {
+  background-color: #F69EFD
+}
+
+.CLFBankruptcyCLFHighlight {
+  background-color: #FF86C4
+}
+
+.CLFCorporateLitigationCLFHighlight {
+  background-color: #E7BB98
+}
+
+.CLFClassActionLawsuitCLFHighlight {
+  background-color: #C3AB99
+}
+
+.CLFRegulatoryOrCompanyInvestigationCLFHighlight {
+  background-color: #FDCF87
+}
+
+.CLFRestatementsCLFHighlight {
+  background-color: #B5BDF3
+}
+
+.CLFDelinquentFilingsCLFHighlight {
+  background-color: #A4D2DE
+}
+
+.CLFChangeInAccountingMethodOrPolicyCLFHighlight {
+  background-color: #FDB4FF
+}
+
+.CLFOtherAccountingCLFHighlight {
+  background-color: #D9D8A0
+}
+
+.CLFGeneralReorganizationCLFHighlight {
+  background-color: #FBDAA5
+}
+
+.CLFLayoffsCLFHighlight {
+  background-color: #A0E6EF
+}
+
+.CLFOfficerChangesCLFHighlight {
+  background-color: #E0DFB3
+}
+
+.CLFLaborIssuesCLFHighlight {
+  background-color: #EAEBA0
+}
+
+.CLFPositiveEarningsPreAnnouncementsCLFHighlight {
+  background-color: #FFBEBB
+}
+
+.CLFNegativeEarningsPreAnnouncementsCLFHighlight {
+  background-color: #FE7FB4
+}
+
+.CLFOtherEarningsPreAnnouncementsCLFHighlight {
+  background-color: #B37FFE
+}
+
+.CLFEarningsAnnouncementsCLFHighlight {
+  background-color: #7FD4FE
+}
+
+.CLFDividendsCLFHighlight {
+  background-color: #FF7FD9
+}
+
+.CLFDebtRatingsCLFHighlight {
+  background-color: #7FFEB1
+}
+
+.CLFNameChangesCLFHighlight {
+  background-color: #FEB57F
+}
+
+.CLFExchangeChangesCLFHighlight {
+  background-color: #FF7F7F
+}
+
+.CLFIndicesChangesCLFHighlight {
+  background-color: #D6FE7F
+}
+
+.CLFSpecialEventsCLFHighlight {
+  background-color: #BF7FFF
+}
+
+.CLFSBAnyTerm {
+  border-bottom: double #E9EA87
+}
+
+.CLFSBCategCity {
+  border-bottom: double #00FE64
+}
+
+.CLFSBCategCompany {
+  border-bottom: double #FE6C00
+}
+
+.CLFSBCategContinent {
+  border-bottom: double red
+}
+
+.CLFSBCategCountry {
+  border-bottom: double #AEFE00
+}
+
+.CLFSBCategDate {
+  border-bottom: double #E7904A
+}
+
+.CLFSBCategEmailAddress {
+  border-bottom: double #FED700
+}
+
+.CLFSBCategFunctionEvent {
+  border-bottom: double #00FEFE
+}
+
+.CLFSBCategHoliday {
+  border-bottom: double #2BFE00
+}
+
+.CLFSBCategIndustryTerm {
+  border-bottom: double #FFB400
+}
+
+.CLFSBCategMoneyAmount {
+  border-bottom: double #0063FE
+}
+
+.CLFSBCategNaturalFeature {
+  border-bottom: double #AF00FE
+}
+
+.CLFSBCategOrganization {
+  border-bottom: double #FE00D6
+}
+
+.CLFSBCategOrganizationDescription {
+  border-bottom: double #FB171B
+}
+
+.CLFSBCategPerson {
+  border-bottom: double #8000FF
+}
+
+.CLFSBCategPersonDescription {
+  border-bottom: double #FF0D89
+}
+
+.CLFSBCategPhoneNumber {
+  border-bottom: double #EF3FFD
+}
+
+.CLFSBCategProduct {
+  border-bottom: double #C39370
+}
+
+.CLFSBCategProvinceOrState {
+  border-bottom: double #00FE64
+}
+
+.CLFSBCategRegion {
+  border-bottom: double #FE6C00
+}
+
+.CLFSBCategTechnology {
+  border-bottom: double red
+}
+
+.CLFSBCategTime {
+  border-bottom: double #AEFE00
+}
+
+.CLFSBCategURL {
+  border-bottom: double #8000FF
+}
+
+.CLFSBCategWeapon {
+  border-bottom: double #FED700
+}
+
+.CLFSBCategCompanyRegistrationAuthority {
+  border-bottom: double #00FE64
+}
+
+.CLFSBCategCompanyRegistrationNumber {
+  border-bottom: double #FE6C00
+}
+
+.CLFSBCategCounterpartySubtype {
+  border-bottom: double #EF3FFD
+}
+
+.CLFSBCategDateOfIncorporation {
+  border-bottom: double #2F4F4F
+}
+
+.CLFSBCategEntityURL {
+  border-bottom: double #E7904A
+}
+
+.CLFSBCategHQFaxNumber {
+  border-bottom: double #FED700
+}
+
+.CLFSBCategHQTelephoneNumber {
+  border-bottom: double #00FEFE
+}
+
+.CLFSBCategJurisdictionOfIncorporation {
+  border-bottom: double #C39370
+}
+
+.CLFSBCategLegalName {
+  border-bottom: double #FFB400
+}
+
+.CLFSBCategSourceURL {
+  border-bottom: double #0063FE
+}
+
+.CLFSBCategTradingName {
+  border-bottom: double #AF00FE
+}
+
+.CLFSBAnyEvent {
+  background-color: #FEFF99
+}
+
+.CLFSBCategAcquisition {
+  background-color: #7FFEB1
+}
+
+.CLFSBCategAlliance {
+  background-color: #FEB57F
+}
+
+.CLFSBCategAnalystEarningsEstimate {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategAnalystRecommendation {
+  background-color: #D6FE7F
+}
+
+.CLFSBCategArrest {
+  background-color: #BF7FFF
+}
+
+.CLFSBCategBusinessRelation {
+  background-color: #7FFEFE
+}
+
+.CLFSBCategBuybacks {
+  background-color: #94FE7F
+}
+
+.CLFSBCategCompanyAffiliates {
+  background-color: #FFD97F
+}
+
+.CLFSBCategCompanyCustomer {
+  background-color: #7FB0FE
+}
+
+.CLFSBCategCompanyEarningsAnnouncement {
+  background-color: #D67FFE
+}
+
+.CLFSBCategCompanyEarningsGuidance {
+  background-color: #FE7FEA
+}
+
+.CLFSBCategCompanyIndustry {
+  background-color: #FB898B
+}
+
+.CLFSBCategCompanyInvestment {
+  background-color: #F69EFD
+}
+
+.CLFSBCategCompanyLegalIssues {
+  background-color: #FF86C4
+}
+
+.CLFSBCategCompanyLocation {
+  background-color: #E7BB98
+}
+
+.CLFSBCategCompanyProduct {
+  background-color: #C3AB99
+}
+
+.CLFSBCategCompanySynonym {
+  background-color: #FDCF87
+}
+
+.CLFSBCategCompanyTechnology {
+  background-color: #B5BDF3
+}
+
+.CLFSBCategCompanyTicker {
+  background-color: #A4D2DE
+}
+
+.CLFSBCategCompanyUsingProduct {
+  background-color: #FDB4FF
+}
+
+.CLFSBCategConviction {
+  background-color: #D9D8A0
+}
+
+.CLFSBCategCreditRating {
+  background-color: #FBDAA5
+}
+
+.CLFSBCategEmployeeOf {
+  background-color: #A0E6EF
+}
+
+.CLFSBCategFDAPhase {
+  background-color: #E0DFB3
+}
+
+.CLFSBCategFamilyRelation {
+  background-color: #EAEBA0
+}
+
+.CLFSBCategFinancialTransaction {
+  background-color: #FFBEBB
+}
+
+.CLFSBCategIndictment {
+  background-color: #FE7FB4
+}
+
+.CLFSBCategJointVenture {
+  background-color: #B37FFE
+}
+
+.CLFSBCategLeaderOf {
+  background-color: #7FD4FE
+}
+
+.CLFSBCategManagementChange {
+  background-color: #FF7FD9
+}
+
+.CLFSBCategMemberOf {
+  background-color: #7FFEB1
+}
+
+.CLFSBCategMerger {
+  background-color: #FEB57F
+}
+
+.CLFSBCategMoneyLaundering {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategPercentTrend {
+  background-color: #D6FE7F
+}
+
+.CLFSBCategPersonCommunication {
+  background-color: #BF7FFF
+}
+
+.CLFSBCategPersonDetails {
+  background-color: #FEEA7F
+}
+
+.CLFSBCategPersonEducation {
+  background-color: #7FFEFE
+}
+
+.CLFSBCategPersonPolitical {
+  background-color: #94FE7F
+}
+
+.CLFSBCategPersonPoliticalPast {
+  background-color: #FFD97F
+}
+
+.CLFSBCategPersonProfessional {
+  background-color: #7FB0FE
+}
+
+.CLFSBCategPersonProfessionalPast {
+  background-color: #D67FFE
+}
+
+.CLFSBCategPersonTravel {
+  background-color: #FE7FEA
+}
+
+.CLFSBCategProductIssues {
+  background-color: #FB898B
+}
+
+.CLFSBCategProductRecall {
+  background-color: #F69EFD
+}
+
+.CLFSBCategProductRelease {
+  background-color: #FF86C4
+}
+
+.CLFSBCategStockSplit {
+  background-color: #E7BB98
+}
+
+.CLFSBCategTechnologyOwnership {
+  background-color: #C3AB99
+}
+
+.CLFSBCategTrial {
+  background-color: #FDCF87
+}
+
+.CLFSBCategHQAddress,.CLFSBCategRegisteredAddress {
+  background-color: #FFB400
+}
+
+.CLFSBCategTaxInformation {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategAcummulatedIntangibleAmortization {
+  background-color: #FEFF99
+}
+
+.CLFSBCategAdvertisingExpense {
+  background-color: #7FFEB1
+}
+
+.CLFSBCategAmortizationOfIntangibles {
+  background-color: #FEB57F
+}
+
+.CLFSBCategCapitalizedInterest {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategDeferredRevenue {
+  background-color: pink
+}
+
+.CLFSBCategDepreciationExpense {
+  background-color: #FF1493
+}
+
+.CLFSBCategEmployeeNumber {
+  background-color: #DEB887
+}
+
+.CLFSBCategInterestExpense {
+  background-color: #7FFEFE
+}
+
+.CLFSBCategNumberOfShareholders {
+  background-color: #0F0
+}
+
+.CLFSBCategRentalExpenses {
+  background-color: #FFD97F
+}
+
+.CLFSBCategResearchAndDevelopmentExpense {
+  background-color: #7FB0FE
+}
+
+.CLFSBCategUnusualCharges {
+  background-color: #D67FFE
+}
+
+.CLFSBCategBusinessDeals {
+  background-color: #7FFEB1
+}
+
+.CLFSBCategStrategicCombinations {
+  background-color: #FEB57F
+}
+
+.CLFSBCategNewBusinessOrUnitOrSubsidiary {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategNewMarket {
+  background-color: #D6FE7F
+}
+
+.CLFSBCategGeneralProducts {
+  background-color: #BF7FFF
+}
+
+.CLFSBCategProductionGuidance {
+  background-color: #FEEA7F
+}
+
+.CLFSBCategMergersAndAcquisitions {
+  background-color: #7FFEFE
+}
+
+.CLFSBCategDivestitures {
+  background-color: #94FE7F
+}
+
+.CLFSBCategSpinoffs {
+  background-color: #FFD97F
+}
+
+.CLFSBCategEquityInvestments {
+  background-color: #7FB0FE
+}
+
+.CLFSBCategShareRepurchases {
+  background-color: #D67FFE
+}
+
+.CLFSBCategEquityFinancing {
+  background-color: #FE7FEA
+}
+
+.CLFSBCategDebtFinancing {
+  background-color: #FB898B
+}
+
+.CLFSBCategInitialPublicOfferings {
+  background-color: #F69EFD
+}
+
+.CLFSBCategBankruptcy {
+  background-color: #FF86C4
+}
+
+.CLFSBCategCorporateLitigation {
+  background-color: #E7BB98
+}
+
+.CLFSBCategClassActionLawsuit {
+  background-color: #C3AB99
+}
+
+.CLFSBCategRegulatoryOrCompanyInvestigation {
+  background-color: #FDCF87
+}
+
+.CLFSBCategRestatements {
+  background-color: #B5BDF3
+}
+
+.CLFSBCategDelinquentFilings {
+  background-color: #A4D2DE
+}
+
+.CLFSBCategChangeInAccountingMethodOrPolicy {
+  background-color: #FDB4FF
+}
+
+.CLFSBCategOtherAccounting {
+  background-color: #D9D8A0
+}
+
+.CLFSBCategGeneralReorganization {
+  background-color: #FBDAA5
+}
+
+.CLFSBCategLayoffs {
+  background-color: #A0E6EF
+}
+
+.CLFSBCategOfficerChanges {
+  background-color: #E0DFB3
+}
+
+.CLFSBCategLaborIssues {
+  background-color: #EAEBA0
+}
+
+.CLFSBCategPositiveEarningsPreAnnouncements {
+  background-color: #FFBEBB
+}
+
+.CLFSBCategNegativeEarningsPreAnnouncements {
+  background-color: #FE7FB4
+}
+
+.CLFSBCategOtherEarningsPreAnnouncements {
+  background-color: #B37FFE
+}
+
+.CLFSBCategEarningsAnnouncements {
+  background-color: #7FD4FE
+}
+
+.CLFSBCategDividends {
+  background-color: #FF7FD9
+}
+
+.CLFSBCategDebtRatings {
+  background-color: #7FFEB1
+}
+
+.CLFSBCategNameChanges {
+  background-color: #FEB57F
+}
+
+.CLFSBCategExchangeChanges {
+  background-color: #FF7F7F
+}
+
+.CLFSBCategIndicesChanges {
+  background-color: #D6FE7F
+}
+
+.CLFSBCategSpecialEvents {
+  background-color: #BF7FFF
+}
+
+.CLFVersionsTitle {
+  margin-left: 5px;
+  color: #0D5A90;
+  font-size: 11px;
+  line-height: 20px
+}
+
+.CLFCopyMetadata {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  cursor: pointer
+}
+
+.CLFCopyMetadataTextArea {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  z-index: -999
+}
+
+.CLFHelpItem {
+  margin: 8px 2px
+}
+
+.CLFDealContainer {
+  color: #0D5A90;
+  display: block;
+  font-size: 11px;
+  height: 20px;
+  line-height: 20px
+}
+
+.CLFDealLink {
+  color: #0f9ff1;
+  margin: 0 1%;
+  position: absolute;
+  right: 0
+}
