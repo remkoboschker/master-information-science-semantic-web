@@ -2,10 +2,10 @@
 
 /* disable h5bp print style printing out the link href*/
 
-abbr[title]:after,
+/*abbr[title]:after,
 a[href]:after {
     content: "";
-}
+}*/
 
 
 /*!
