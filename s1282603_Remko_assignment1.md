@@ -93,12 +93,13 @@ In the table below the annotations are counted. Values are presented in a table 
 | city | - | - | - | 1 | 1/0/0 | 1/0/0 |
 | region | 3 | 1/0/2 | 0/1/2 | - | - | - |
 | province or state | - | 0/2/0 | - | - | - | - |
-| country | 3 | 3/0 | 3/0 | 1 | 1/0/0 | 1/0/0 |
+| country | 3 | 3/0/0 | 3/0/0 | 1 | 1/0/0 | 1/0/0 |
 | geographical feature | 1 | 0/0/1 | 1/0/0 | - | - | - |
 | event | - | - | - | 1 | 1/0/0 | 1/0/0 |
 | organization | - | - | - | 2 | 2/0/0 | 2/0/0 |
-| product | - | - | - | 9 | 0/0/9 | 8/1/1 |
-| not a named entity | - | 0 | 2 | - | 0 | 3 |
+| product | - | - | - | 9 | 0/0/9 | 7/1/1 |
+| not a named entity | - | 0/0/0 | 0/2/0 | - | 0/0/0 | 0/3/0 |
+| __total__ | __14__ | __8/2/6__ | __9/3/4__ | __19__ | __10/0/9__ | __17/5/1__ |
 
 
 Recognizing people, cities, countries and organizations appears to be working well with almost no errors. However the more abstract _the Chinese_ or _the West_ are missed by both systems.
