@@ -1,0 +1,254 @@
+[ {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This ontology describes spices, herbs and mixtures."
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardomom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice" ],
+  "http://www.semanticweb.org/remkoboschker/ontologies/spice#isPartOfPlant" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#seed"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Food",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Root",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Salt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@value" : "Any substance added to food to change or enhance its flavour"
+  }, {
+    "@value" : "Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#aril",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#bark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#berry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#bulb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#contains",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"
+  }, {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"
+  }, {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#hasBotanicalName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#hasCommonName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#hasFlavourCompound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"
+  }, {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"
+  }, {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#isOfCulture",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#isPartOfPlant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#isUsedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#uses"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#kernel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#leaf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#pistil",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#regionOfOrigin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#rhizome",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#root",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#seed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#uses",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#definition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

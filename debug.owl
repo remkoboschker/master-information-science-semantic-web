@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://git-ainf.aau.at/debug_ontology#58147631887940#"
+     xml:base="http://git-ainf.aau.at/debug_ontology#58147631887940"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://git-ainf.aau.at/debug_ontology#58147631887940"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#aril -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#aril">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#berry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#berry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bulb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bulb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#kernel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#kernel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#leaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#leaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#pistil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#pistil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#rhizome -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#rhizome">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#root -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#root">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#seed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#seed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
