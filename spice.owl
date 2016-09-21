@@ -1,192 +1,1334 @@
-@prefix : <http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/remkoboschker/ontologies/spice#"
+     xml:base="http://www.semanticweb.org/remkoboschker/ontologies/spice"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:spice="http://www.semanticweb.org/remkoboschker/ontologies/spice#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology describes spices, herbs and mixtures.</rdfs:comment>
+    </owl:Ontology>
+    
 
-<http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5> rdf:type owl:Ontology .
 
-#################################################################
-#    Object Properties
-#################################################################
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#contains
-:contains rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty ;
-          owl:inverseOf :isContainedIn ;
-          rdfs:domain :Mixtures ;
-          rdfs:range :AromaticVegetable ,
-                     :Herb ,
-                     :Spice .
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#isContainedIn
-:isContainedIn rdf:type owl:ObjectProperty ;
-               rdfs:domain :AromaticVegetable ,
-                           :Herb ,
-                           :Spice ;
-               rdfs:range :Mixtures .
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#isPartOfPlant
-:isPartOfPlant rdf:type owl:ObjectProperty ;
-               rdfs:range :PlantPart .
 
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#isUsedIn
-:isUsedIn rdf:type owl:ObjectProperty ;
-          owl:inverseOf :uses ;
-          rdfs:domain :Flavouring ;
-          rdfs:range :Cuisine .
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#uses
-:uses rdf:type owl:ObjectProperty ;
-      rdfs:domain :Cuisine ;
-      rdfs:range :Flavouring .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-#################################################################
-#    Data properties
-#################################################################
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#hasBotanicalName
-:hasBotanicalName rdf:type owl:DatatypeProperty .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#contains -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#hasCommonName
-:hasCommonName rdf:type owl:DatatypeProperty .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#hasFlavourCompound
-:hasFlavourCompound rdf:type owl:DatatypeProperty .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#isOfCulture
-:isOfCulture rdf:type owl:DatatypeProperty .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#isFromRegion -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#isFromRegion">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#regionHasCuisine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#regionOfOrigin
-:regionOfOrigin rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Cuisine .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#isUsedIn -->
 
-#################################################################
-#    Classes
-#################################################################
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#isUsedIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#uses"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#AromaticSpice
-:AromaticSpice rdf:type owl:Class ;
-               rdfs:subClassOf :Spice .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#regionHasCuisine -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#AromaticVegetable
-:AromaticVegetable rdf:type owl:Class ;
-                   rdfs:subClassOf :Flavouring .
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#regionHasCuisine">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Cuisine
-:Cuisine rdf:type owl:Class .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#uses -->
 
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#uses">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+    </owl:ObjectProperty>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Flavouring
-:Flavouring rdf:type owl:Class ;
-            rdfs:subClassOf :Food .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Food
-:Food rdf:type owl:Class .
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Herb
-:Herb rdf:type owl:Class ;
-      rdfs:subClassOf :Flavouring .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#hasBotanicalName -->
 
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#hasBotanicalName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#HotSpice
-:HotSpice rdf:type owl:Class ;
-          rdfs:subClassOf :Spice .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#hasCommonName -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#MildSpice
-:MildSpice rdf:type owl:Class ;
-           rdfs:subClassOf :Spice .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#hasCommonName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Mixtures
-:Mixtures rdf:type owl:Class ;
-          rdfs:subClassOf :Flavouring .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#PlantPart
-:PlantPart rdf:type owl:Class .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#AmericanCuisine -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#Spice
-:Spice rdf:type owl:Class ;
-       rdfs:subClassOf :Flavouring .
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AmericanCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:Class>
+    
 
 
-#################################################################
-#    Individuals
-#################################################################
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#aril
-:aril rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bark
-:bark rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"/>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#berry
-:berry rdf:type owl:NamedIndividual ,
-                :PlantPart .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#bulb
-:bulb rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#cardomom
-:cardomom rdf:type owl:NamedIndividual ,
-                   :AromaticSpice ;
-          :isPartOfPlant :seed .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#kernel
-:kernel rdf:type owl:NamedIndividual ,
-                 :PlantPart .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#leaf
-:leaf rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#pistil
-:pistil rdf:type owl:NamedIndividual ,
-                 :PlantPart .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#rhizome
-:rhizome rdf:type owl:NamedIndividual ,
-                  :PlantPart .
 
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Bud -->
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#root
-:root rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
 
 
-###  http://www.semanticweb.org/remkoboschker/ontologies/2016/8/untitled-ontology-5#seed
-:seed rdf:type owl:NamedIndividual ,
-               :PlantPart .
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb -->
 
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
 
-###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CulturalCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CulturalCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#EthnicCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#EthnicCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Pericarp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pericarp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ReligiousCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ReligiousCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Root -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Root">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Salt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Salt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any substance added to food to change or enhance its flavour</skos:definition>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seasoning</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Food"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#StyleOfCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#StyleOfCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Allspice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Allspice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#AnchoChili -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AnchoChili">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Aniseed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Aniseed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Basil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Basil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#BellPepper -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#BellPepper">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AmericanCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BellPepper"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunSeasoning"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunSeasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunSeasoning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Caraway -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Caraway">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Caribbean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Caribbean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Allspice"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Root"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cassia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cassia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CelerySeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CelerySeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ChiliPowder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ChiliPowder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AnchoChili"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Chillies -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Chillies">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Chillies"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseFiveSpice"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PeanutOil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Scallion"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#StarAnise"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseFiveSpice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseFiveSpice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cassia"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#FennelSeed"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#StarAnise"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#SzechuanPeppercorn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bud"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CoconutMilk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CoconutMilk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryLeave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryLeave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryPowder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryPowder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Chillies"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fenugreek"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#DillSeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#DillSeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#FennelSeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#FennelSeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Fenugreek -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fenugreek">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#FrenchCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#FrenchCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HerbesDeProvance"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mirepoix"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Galangal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Galangal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#GaramMasala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#GaramMasala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mace"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Ghee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ghee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#HerbesDeProvance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#HerbesDeProvance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Marjoram"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sage"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Tarragon"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#IndianCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#IndianCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryPowder"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fenugreek"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#GaramMasala"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ghee"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ItalianCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ItalianCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#FennelSeed"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sage"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Soffrito"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#KaffirLime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#KaffirLime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinSoffrito"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinSoffrito -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinSoffrito">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BellPepper"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#LemonGrass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#LemonGrass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Mace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mace">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Marjoram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Marjoram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Basil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MexicanCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MexicanCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#ChiliPowder"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeave"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Saffron"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Scallion"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Za&apos;atar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Mirepoix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mirepoix">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Mustard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mustard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Nigela -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nigela">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#NorthAfricanCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#NorthAfricanCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#RasElHanout"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#PeanutOil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#PeanutOil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#PoppySeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#PoppySeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#RasElHanout -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#RasElHanout">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Saffron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Saffron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Sage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Scallion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Scallion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Sesame -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sesame">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Soffrito -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Soffrito">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#StarAnise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#StarAnise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pericarp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Sumac -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sumac">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#SzechuanPeppercorn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#SzechuanPeppercorn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Tarragon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Tarragon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#ThaiCuisine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#ThaiCuisine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Basil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cardamom"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Chillies"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CoconutMilk"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryPowder"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Galangal"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#KaffirLime"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#LemonGrass"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#PeanutOil"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot"/>
+        <uses rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/remkoboschker/ontologies/spice#Za&apos;atar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Za&apos;atar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sesame"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Sumac"/>
+        <contains rdf:resource="http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bud"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pericarp"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Root"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Salt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

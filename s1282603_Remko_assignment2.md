@@ -9,7 +9,7 @@ This ontology models the domain of the seasoning of food. It contains cuisines, 
 And some of the classification is taken from chapter one in Handbook of Herbs and Spices edited by K.V. Peter, Woodhead Publishing 2001.
 
 
-[diagram]
+![image of class hierarchy](classHierarchy.png)
 
 Because this ontology uses a lot of natural kinds (names of spices for instance), it becomes less clear what is an individual. In the case of a student with a particular number this seems pretty straight-forward. However with for instance Cinnamon I am not talking about a particular stick of cinnamon in my hand or a batch of cinnamon with a particular number in the belly of some cargo ship. For all intents and purposes of this ontology the names of a particular plant, herb or spice is taken to instantiate the class it belongs to.
 
@@ -319,6 +319,8 @@ contains, isContainedIn
 isFromRegion, isFromCulture, hasCuisine
 
 ### Data Properties
+
+
 
 ## Queries
 
