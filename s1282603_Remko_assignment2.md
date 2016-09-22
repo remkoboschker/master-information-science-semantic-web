@@ -51,12 +51,83 @@ PREFIX : <http://www.semanticweb.org/remkoboschker/ontologies/spice#>
 
 ### 1. Simple
 
+````
+SELECT ?food
+WHERE {
+  :ThaiCuisine :uses ?food
+}
+````
 
+| food |
+| :-- |
+| GreenCardamom	|
+| CoconutMilk	|
+| Cumin	|
+| ChilliPepper	|
+| KaffirLime	|
+| Lemongrass	|
+| Cilantro	|
+| Shallot	|
+| Garlic	|
+| CurryPowder	|
+| Basil	|
+| Galangal	|
+| PeanutOil	|
+| Turmeric	|
+| Ginger|
 
-### 1. Complex
+### 2. Complex
 
-### 1. Restrict to type
+````
+SELECT ?food
+WHERE {
+  :ThaiCuisine :uses ?food .
+  :IndianCuisine :uses ?food .
+}
+````
 
-### 1. Restrict type to subclass of a type
+| food |
+| :-- |
+| GreenCardamom	|
+| Cumin	|
+| CurryPowder	|
+| Turmeric	|
+| Ginger|
 
-### 1. Using feature of SPARQL 1.1
+### 3. Restrict to type
+
+````
+SELECT ?food
+WHERE {
+  :ThaiCuisine :uses ?food .
+  ?food rdf:type :Fats .
+}
+````
+
+| food |
+| :-- |
+| CoconutMilk |
+| PeanutOil |
+
+### 4. Restrict type to subclass of a type
+
+````
+SELECT ?food ?type
+WHERE {
+  :ThaiCuisine :uses ?food .
+  ?food rdf:type ?type .
+  ?type rdfs:subClassOf :Spice
+}
+````
+
+| food | type |
+| :-- | :--- |
+| Turmeric	| MildSpice |
+| GreenCardamom	| AromaticSpice |
+| Cumin	| AromaticSpice |		
+| Lemongrass	| AromaticSpice |
+| ChilliPepper	| HotSpice |
+| Galangal	| HotSpice |		
+| Ginger	| HotSpice |
+
+### 5. Using feature of SPARQL 1.1
