@@ -42,6 +42,37 @@ blockquote + figcaption cite {
   text-align: right;
 }
 
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  font-size: 0.7rem;
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+
 body {
   word-wrap: break-word;
 }
@@ -51,7 +82,7 @@ pre code {
 }
 
 html {
-  font: normal 100% / 1.65 serif;
+  font: normal 12px / 1.65 serif;
 }
 
 body {

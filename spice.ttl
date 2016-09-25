@@ -8,907 +8,935 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://www.semanticweb.org/remkoboschker/ontologies/spice> a owl:Ontology ;
-  owl:imports <http://dbpedia.org/ontology/> , <http://dbpedia.org/resource/> ;
-  rdfs:comment "This ontology describes spices, herbs and mixtures."^^xsd:string .
-#
-#
+	owl:imports <http://dbpedia.org/ontology/> ;
+	rdfs:comment "This ontology describes spices, herbs and mixtures."^^xsd:string .
+# 
+# 
 # #################################################################
 # #
 # #    Annotation properties
 # #
 # #################################################################
-#
-#
+# 
+# 
 # http://www.w3.org/2004/02/skos/core#definition
 
 <http://www.w3.org/2004/02/skos/core#definition> a owl:AnnotationProperty .
-#
+# 
 # http://www.w3.org/2004/02/skos/core#prefLabel
 
 <http://www.w3.org/2004/02/skos/core#prefLabel> a owl:AnnotationProperty .
-#
-#
-#
+# 
+# 
+# 
 # #################################################################
 # #
 # #    Object Properties
 # #
 # #################################################################
-#
-#
+# 
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#contains
 
 :contains a owl:ObjectProperty ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:inverseOf :isContainedIn ;
-  rdfs:domain :Mixture ;
-  rdfs:range :Food .
-#
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf :isContainedIn ;
+	rdfs:domain :Mixture ;
+	rdfs:range :Food .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#cuisineIsFromEthnicGroup
 
 :cuisineIsFromEthnicGroup a owl:ObjectProperty ;
-  owl:inverseOf :ethnicGroupHasCuisine ;
-  rdfs:domain :Cuisine ;
-  rdfs:range dbo:EthnicGroup .
+	owl:inverseOf :ethnicGroupHasCuisine ;
+	rdfs:domain :Cuisine ;
+	rdfs:range dbo:EthnicGroup .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#cuisineIsFromPlace
 
-dbo:EthnicGroup a owl:Class .
-#
+:cuisineIsFromPlace a owl:ObjectProperty ;
+	owl:inverseOf :placeHasCuisine ;
+	rdfs:domain :Cuisine ;
+	rdfs:range dbo:PopulatedPlace .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ethnicGroupHasCuisine
 
 :ethnicGroupHasCuisine a owl:ObjectProperty ;
-  rdfs:domain dbo:EthnicGroup ;
-  rdfs:range :Cuisine .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#cuisineIsFromEthnicGroup
-
-:cuisineIsFromPlace a owl:ObjectProperty ;
-  owl:inverseOf :placeHasCuisine ;
-  rdfs:domain :Cuisine ;
-  rdfs:range dbo:PopulatedPlace .
-
-dbo:PopulatedPlace a owl:Class .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#ethnicGroupHasCuisine
-
-:placeHasCuisine a owl:ObjectProperty ;
-  rdfs:domain dbo:PopulatedPlace ;
-  rdfs:range :Cuisine .
-#
+	rdfs:domain dbo:EthnicGroup ;
+	rdfs:range :Cuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#isContainedIn
 
 :isContainedIn a owl:ObjectProperty ;
-  rdfs:domain :Food ;
-  rdfs:range :Mixture .
-#
+	rdfs:domain :Food ;
+	rdfs:range :Mixture .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#isUsedIn
 
 :isUsedIn a owl:ObjectProperty ;
-  owl:inverseOf :uses ;
-  rdfs:domain :Food ;
-  rdfs:range :Cuisine .
-#
+	owl:inverseOf :uses ;
+	rdfs:domain :Food ;
+	rdfs:range :Cuisine .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#placeHasCuisine
+
+:placeHasCuisine a owl:ObjectProperty ;
+	rdfs:domain dbo:PopulatedPlace ;
+	rdfs:range :Cuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#uses
 
 :uses a owl:ObjectProperty ;
-  rdfs:domain :Cuisine ;
-  rdfs:range :Food .
-#
-#
-#
+	rdfs:domain :Cuisine ;
+	rdfs:range :Food .
+# 
+# 
+# 
 # #################################################################
 # #
 # #    Data properties
 # #
 # #################################################################
-#
-#
+# 
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#hasBotanicalName
 
 :hasBotanicalName a owl:DatatypeProperty ;
-  rdfs:domain :AromaticVegetable , :Herb , :Spice ;
-  rdfs:range xsd:string .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#hasCommonName
-
-:hasCommonName a owl:DatatypeProperty ;
-  rdfs:domain :Cuisine , :Food ;
-  rdfs:range xsd:string .
-#
-#
-#
+	rdfs:domain :PlantPart ;
+	rdfs:range xsd:string .
+# 
+# 
+# 
 # #################################################################
 # #
 # #    Classes
 # #
 # #################################################################
-#
-#
-# http://dbpedia.org/ontology/Origin
-#
+# 
+# 
+# http://dbpedia.org/ontology/EthnicGroup
+
+dbo:EthnicGroup a owl:Class .
+# 
+# http://dbpedia.org/ontology/PopulatedPlace
+
+dbo:PopulatedPlace a owl:Class .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#AmericanCuisine
 
 :AmericanCuisine a owl:Class ;
-  rdfs:subClassOf :RegionalCuisine .
-#
+	rdfs:subClassOf :RegionalCuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Aril
 
 :Aril a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticSpice
 
 :AromaticSpice a owl:Class ;
-  rdfs:subClassOf :Spice .
-#
+	rdfs:subClassOf :Spice .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#AromaticVegetable
 
 :AromaticVegetable a owl:Class ;
-  rdfs:subClassOf :Seasoning .
-#
+	rdfs:subClassOf :Seasoning .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#AsianCuisine
 
 :AsianCuisine a owl:Class ;
-  rdfs:subClassOf :RegionalCuisine .
-#
+	rdfs:subClassOf :RegionalCuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Bark
 
 :Bark a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Berry
 
 :Berry a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Bud
 
 :Bud a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Bulb
 
 :Bulb a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cereal
 
 :Cereal a owl:Class ;
-  rdfs:subClassOf :EdibleSeed .
-#
+	rdfs:subClassOf :EdibleSeed .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cuisine
 
 :Cuisine a owl:Class ;
-  owl:disjointWith :PlantPart .
-#
+	owl:disjointWith :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CulturalCuisine
 
 :CulturalCuisine a owl:Class ;
-  rdfs:subClassOf :Cuisine .
-#
+	rdfs:subClassOf :Cuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#EdibleSeed
 
 :EdibleSeed a owl:Class ;
-  rdfs:subClassOf :Food .
-#
+	rdfs:subClassOf :Food .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#EthnicCuisine
 
 :EthnicCuisine a owl:Class ;
-  rdfs:subClassOf :Cuisine .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#Fats
+	rdfs:subClassOf :Cuisine .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#Fat
 
-:Fats a owl:Class ;
-  rdfs:subClassOf :Food .
-#
+:Fat a owl:Class ;
+	rdfs:subClassOf :Food .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Food
 
 :Food a owl:Class .
-#
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Herb
 
 :Herb a owl:Class ;
-  rdfs:subClassOf :Seasoning .
-#
+	rdfs:subClassOf :Seasoning .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#HotSpice
 
 :HotSpice a owl:Class ;
-  rdfs:subClassOf :Spice .
-#
+	rdfs:subClassOf :Spice .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Kernel
 
 :Kernel a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine
 
 :LatinAmericanCuisine a owl:Class ;
-  rdfs:subClassOf :RegionalCuisine .
-#
+	rdfs:subClassOf :RegionalCuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Leaf
 
 :Leaf a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Legume
 
 :Legume a owl:Class ;
-  rdfs:subClassOf :EdibleSeed .
-#
+	rdfs:subClassOf :EdibleSeed .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine
 
 :MediterraneanCuisine a owl:Class ;
-  rdfs:subClassOf :RegionalCuisine .
-#
+	rdfs:subClassOf :RegionalCuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine
 
 :MiddleEasternCuisine a owl:Class ;
-  rdfs:subClassOf :RegionalCuisine .
-#
+	rdfs:subClassOf :RegionalCuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MildSpice
 
 :MildSpice a owl:Class ;
-  rdfs:subClassOf :Spice .
-#
+	rdfs:subClassOf :Spice .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Mixture
 
 :Mixture a owl:Class ;
-  rdfs:subClassOf :Seasoning .
-#
+	rdfs:subClassOf :Seasoning .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Nut
 
 :Nut a owl:Class ;
-  rdfs:subClassOf :EdibleSeed .
-#
+	rdfs:subClassOf :EdibleSeed .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Pericarp
 
 :Pericarp a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Pistil
 
 :Pistil a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#PlantPart
 
 :PlantPart a owl:Class .
-#
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Pseudocereal
 
 :Pseudocereal a owl:Class ;
-  rdfs:subClassOf :EdibleSeed .
-#
+	rdfs:subClassOf :EdibleSeed .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#RegionalCuisine
 
 :RegionalCuisine a owl:Class ;
-  rdfs:subClassOf :Cuisine .
-#
+	rdfs:subClassOf :Cuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ReligiousCuisine
 
 :ReligiousCuisine a owl:Class ;
-  rdfs:subClassOf :Cuisine .
-#
+	rdfs:subClassOf :Cuisine .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Rhizome
 
 :Rhizome a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Root
 
 :Root a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Salt
 
 :Salt a owl:Class ;
-  rdfs:subClassOf :Seasoning .
-#
+	rdfs:subClassOf :Seasoning .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Seasoning
 
 :Seasoning a owl:Class ;
-  rdfs:subClassOf :Food ;
-  <http://www.w3.org/2004/02/skos/core#definition> "Any substance added to food to change or enhance its flavour"^^xsd:string , "Seasoning"^^xsd:string .
-#
+	rdfs:subClassOf :Food .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Seed
 
 :Seed a owl:Class ;
-  rdfs:subClassOf :PlantPart .
-#
+	rdfs:subClassOf :PlantPart .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Spice
 
 :Spice a owl:Class ;
-  rdfs:subClassOf :Seasoning .
-#
+	rdfs:subClassOf :Seasoning .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#StyleOfCuisine
 
 :StyleOfCuisine a owl:Class ;
-  rdfs:subClassOf :Cuisine .
-#
-#
-#
+	rdfs:subClassOf :Cuisine .
+# 
+# 
+# 
 # #################################################################
 # #
 # #    Individuals
 # #
 # #################################################################
-#
-#
+# 
+# 
+# http://dbpedia.org/resource/Cajun
+
+dbr:Cajun a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Caribbean
+
+dbr:Caribbean a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/China
+
+dbr:China a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/France
+
+dbr:France a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/India
+
+dbr:India a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Italy
+
+dbr:Italy a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Latin_America
+
+dbr:Latin_America a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Mediterranean_Basin
+
+dbr:Mediterranean_Basin a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Mexico
+
+dbr:Mexico a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Middle_East
+
+dbr:Middle_East a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/North_Africa
+
+dbr:North_Africa a owl:NamedIndividual .
+# 
+# http://dbpedia.org/resource/Thailand
+
+dbr:Thailand a owl:NamedIndividual .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Allspice
 
 :Allspice a owl:NamedIndividual , :AromaticSpice , :Berry ;
-  :hasCommonName "Allspice";
-  :hasBotanicalName "Pimenta dioica".
-#
+	:hasBotanicalName "Pimenta dioica" ;
+	rdfs:label "Allspice" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#AnchoChili
 
 :AnchoChili a owl:NamedIndividual , :HotSpice ;
-  :hasCommonName "Ancho Chili" ;
-  :hasCommonName "Poblano" ;
-  :hasBotanicalName "Capsicum annuum".
-#
+	:hasBotanicalName "Capsicum annuum" ;
+	rdfs:label "Ancho Chili" , "Poblano" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Aniseed
 
 :Aniseed a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Aniseed" ;
-  :hasBotanicalName "Pimpinella anisum" .
-#
+	:hasBotanicalName "Pimpinella anisum" ;
+	rdfs:label "Aniseed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Basil
 
 :Basil a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Basil" ;
-  :hasBotanicalName "Ocimum basilicum" .
-#
+	:hasBotanicalName "Ocimum basilicum" ;
+	rdfs:label "Basil" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#BayLeaf
 
 :BayLeaf a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Bay Leaf" ;
-  :hasBotanicalName "Laurus nobilis" .
-#
+	:hasBotanicalName "Laurus nobilis" ;
+	rdfs:label "Bay Leaf" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#BellPepper
 
 :BellPepper a owl:NamedIndividual , :AromaticVegetable , :Berry ;
-  :hasCommonName "Bell Pepper" ;
-  :hasBotanicalName "Capsicum annuum" .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn
-
-:BlackPeppercorn a owl:NamedIndividual , :Berry , :HotSpice ;
-  :hasCommonName "Black Peppercorn" ;
-  :hasBotanicalName "Piper nigrum" .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter
-
-:Butter a owl:NamedIndividual , :Fats ;
-  :hasCommonName "Butter".
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunCuisine
-
-:CajunCuisine a owl:NamedIndividual , :EthnicCuisine ;
-  :uses :BayLeaf , :BellPepper , :Butter , :CajunSeasoning , :CayennePepper , :Celery , :FlatParsley , :Garlic , :OliveOil , :Onion , :Oregano , :Paprika , :Rosemary , :Shallot , :Thyme ;
-  :cuisineIsFromEthnicGroup dbr:Cajun ;
-   :hasCommonName "Cajun Cuisine" .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunSeasoning
-
-:CajunSeasoning a owl:NamedIndividual , :Mixture ;
-  :contains :BlackPeppercorn , :CayennePepper , :Cumin , :Paprika , :Thyme ;
-   :hasCommonName "Cajun Seasoning " .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#Caraway
-
-:Caraway a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Caraway" ;
-  :hasBotanicalName "Carum carvi " .
-#
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#GreenCardamom
-
-:GreenCardamom a owl:NamedIndividual , :AromaticSpice ;
-  :hasCommonName "Green Cardamom" ;
-  :hasBotanicalName "Elettaria cardamomum" .
-#
-
+	:hasBotanicalName "Capsicum annuum" ;
+	rdfs:label "Bell Pepper" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackCardamom
 
 :BlackCardamom a owl:NamedIndividual , :AromaticSpice ;
-  :hasCommonName "Black Cardamom" ;
-  :hasBotanicalName "Amomum cardamomum" .
-#
+	:hasBotanicalName "Amomum cardamomum" ;
+	rdfs:label "Black Cardamom" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#BlackPeppercorn
 
-# http://www.semanticweb.org/remkoboschker/ontologies/spice#Caribbean
+:BlackPeppercorn a owl:NamedIndividual , :Berry , :HotSpice ;
+	:hasBotanicalName "Piper nigrum" ;
+	rdfs:label "Black Peppercorn" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#Butter
+
+:Butter a owl:NamedIndividual , :Fat ;
+	rdfs:label "Butter" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunCuisine
+
+:CajunCuisine a owl:NamedIndividual , :EthnicCuisine ;
+	:cuisineIsFromEthnicGroup dbr:Cajun ;
+	:uses :BayLeaf , :BellPepper , :Butter , :CajunSeasoning , :CayennePepper , :Celery , :FlatParsley , :Garlic , :OliveOil , :Onion , :Oregano , :Paprika , :Rosemary , :Shallot , :Thyme ;
+	rdfs:label "Cajun Cuisine" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#CajunSeasoning
+
+:CajunSeasoning a owl:NamedIndividual , :Mixture ;
+	:contains :BlackPeppercorn , :CayennePepper , :Cumin , :Paprika , :Thyme ;
+	rdfs:label "Cajun Seasoning " .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#Caraway
+
+:Caraway a owl:NamedIndividual , :AromaticSpice , :Seed ;
+	:hasBotanicalName "Carum carvi " ;
+	rdfs:label "Caraway" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#CaribbeanCuisine
 
 :CaribbeanCuisine a owl:NamedIndividual , :LatinAmericanCuisine ;
-  :uses :Allspice , :Cinnamon , :Clove , :Garlic , :Ginger , :Nutmeg ;
-  :cuisineIsFromPlace dbr:Caribbean ;
-   :hasCommonName "Caribbean Cuisine" .
-#
+	:cuisineIsFromPlace dbr:Caribbean ;
+	:uses :Allspice , :Cinnamon , :Clove , :Garlic , :Ginger , :Nutmeg ;
+	rdfs:label "Caribbean Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Carrot
 
 :Carrot a owl:NamedIndividual , :AromaticVegetable , :Root ;
-  :hasCommonName "Carrot" ;
-  :hasBotanicalName "Daucus carota var. sativus" .
-#
+	:hasBotanicalName "Daucus carota var. sativus" ;
+	rdfs:label "Carrot" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cassia
 
 :Cassia a owl:NamedIndividual , :AromaticSpice , :Bark ;
-  :hasCommonName "Cassia" ;
-  :hasBotanicalName "Cinnamomum cassia" .
-#
+	:hasBotanicalName "Cinnamomum cassia" ;
+	rdfs:label "Cassia" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CayennePepper
 
 :CayennePepper a owl:NamedIndividual , :Berry , :HotSpice ;
-  :hasCommonName "Cayenne Pepper" ;
-  :hasBotanicalName "Capsicum Annuum cult. Cayenne" .
-#
+	:hasBotanicalName "Capsicum Annuum cult. Cayenne" ;
+	rdfs:label "Cayenne Pepper" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Celery
 
 :Celery a owl:NamedIndividual , :AromaticVegetable ;
-  :hasCommonName "Celery" ;
-  :hasBotanicalName "Apium graveolens var. dulce" .
-#
+	:hasBotanicalName "Apium graveolens var. dulce" ;
+	rdfs:label "Celery" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CelerySeed
 
 :CelerySeed a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Celery Seed" ;
-  :hasBotanicalName "Apium graveolens var. dulce" .
-#
+	:hasBotanicalName "Apium graveolens var. dulce" ;
+	rdfs:label "Celery Seed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ChiliPowder
 
 :ChiliPowder a owl:NamedIndividual , :Mixture ;
-  :contains :AnchoChili , :Cumin , :Oregano , :Paprika ;
-   :hasCommonName "Chili Powder" .
-#
+	:contains :AnchoChili , :Cumin , :Oregano , :Paprika ;
+	rdfs:label "Chili Powder" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ChilliPepper
 
 :ChilliPepper a owl:NamedIndividual , :Berry , :HotSpice ;
-  :hasCommonName "Chilli Pepper" ;
-  :hasCommonName "Chili Pepper" ;
-  :hasBotanicalName "Capsicum" .
-#
+	:hasBotanicalName "Capsicum" ;
+	rdfs:label "Chili Pepper" , "Chilli Pepper" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseCuisine
 
 :ChineseCuisine a owl:NamedIndividual , :AsianCuisine ;
-  :uses :ChilliPepper , :ChineseFiveSpice , :Cilantro , :Garlic , :Ginger , :PeanutOil , :Scallion , :Shallot , :StarAnise ;
-  :cuisineIsFromPlace dbr:China ;
-   :hasCommonName "Chinese Cuisine" .
-
-#
+	:cuisineIsFromPlace dbr:China ;
+	:uses :ChilliPepper , :ChineseFiveSpice , :Cilantro , :Garlic , :Ginger , :PeanutOil , :Scallion , :Shallot , :StarAnise ;
+	rdfs:label "Chinese Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ChineseFiveSpice
 
 :ChineseFiveSpice a owl:NamedIndividual , :Mixture ;
-  :contains :Cassia , :Clove , :FennelSeed , :StarAnise , :SzechuanPeppercorn ;
-   :hasCommonName "Chinese Five Spice " .
-#
+	:contains :Cassia , :Clove , :FennelSeed , :StarAnise , :SzechuanPeppercorn ;
+	rdfs:label "Chinese Five Spice " .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cilantro
 
 :Cilantro a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Cilantro" ;
-  :hasBotanicalName "Coriandrum sativum" .
-#
+	:hasBotanicalName "Coriandrum sativum" ;
+	rdfs:label "Cilantro" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cinnamon
 
 :Cinnamon a owl:NamedIndividual , :AromaticSpice , :Bark ;
-  :hasCommonName "Cinnamon" ;
-  :hasBotanicalName "Cinnamomum verum" .
-#
+	:hasBotanicalName "Cinnamomum verum" ;
+	rdfs:label "Cinnamon" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Clove
 
 :Clove a owl:NamedIndividual , :AromaticSpice , :Bud ;
-  :hasCommonName "Clove" ;
-  :hasBotanicalName "Syzygium aromaticum" .
-#
+	:hasBotanicalName "Syzygium aromaticum" ;
+	rdfs:label "Clove" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CoconutMilk
 
-:CoconutMilk a owl:NamedIndividual , :Fats ;
- :hasCommonName "Coconut Milk" .
-#
+:CoconutMilk a owl:NamedIndividual , :Fat ;
+	rdfs:label "Coconut Milk" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Coriander
 
 :Coriander a owl:NamedIndividual , :MildSpice , :Seed ;
-  :hasCommonName "Coriander" ;
-  :hasBotanicalName "Coriandrum sativum" .
-#
+	:hasBotanicalName "Coriandrum sativum" ;
+	rdfs:label "Coriander" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Cumin
 
 :Cumin a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Cumin" ;
-  :hasBotanicalName "Cuminum cyminum" .
-#
+	:hasBotanicalName "Cuminum cyminum" ;
+	rdfs:label "Cumin" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryLeaf
 
 :CurryLeaf a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Curry Leaf" ;
-  :hasBotanicalName "Murraya koenigii" .
-#
+	:hasBotanicalName "Murraya koenigii" ;
+	rdfs:label "Curry Leaf" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#CurryPowder
 
 :CurryPowder a owl:NamedIndividual , :Mixture ;
-  :contains :ChilliPepper , :Coriander , :Cumin , :Fenugreek , :Turmeric ;
-   :hasCommonName "Curry Powder" .
-#
+	:contains :ChilliPepper , :Coriander , :Cumin , :Fenugreek , :Turmeric ;
+	rdfs:label "Curry Powder" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#DillSeed
 
 :DillSeed a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Dill Seed" ;
-  :hasBotanicalName "Anethum graveolens" .
-#
+	:hasBotanicalName "Anethum graveolens" ;
+	rdfs:label "Dill Seed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#FennelSeed
 
 :FennelSeed a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Fennel Seed" ;
-  :hasBotanicalName "Foeniculum vulgare" .
-#
+	:hasBotanicalName "Foeniculum vulgare" ;
+	rdfs:label "Fennel Seed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Fenugreek
 
 :Fenugreek a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Fenugreek" ;
-  :hasBotanicalName "Trigonella foenum-graecum" .
-#
+	:hasBotanicalName "Trigonella foenum-graecum" ;
+	rdfs:label "Fenugreek" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#FlatParsley
 
 :FlatParsley a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Flat Parsley" ;
-  :hasBotanicalName "Petroselinum crispum var. neapolitanum" .
-#
+	:hasBotanicalName "Petroselinum crispum var. neapolitanum" ;
+	rdfs:label "Flat Parsley" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#FrenchCuisine
 
 :FrenchCuisine a owl:NamedIndividual , :MediterraneanCuisine , :RegionalCuisine ;
-  :uses :BayLeaf , :FlatParsley , :Garlic , :HerbesDeProvance , :Mirepoix , :Nutmeg , :Oregano , :Rosemary , :Thyme ;
-  :cuisineIsFromPlace dbr:France ;
-   :hasCommonName "French Cuisine" .
-#
+	:cuisineIsFromPlace dbr:France ;
+	:uses :BayLeaf , :FlatParsley , :Garlic , :HerbesDeProvance , :Mirepoix , :Nutmeg , :Oregano , :Rosemary , :Thyme ;
+	rdfs:label "French Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Galangal
 
 :Galangal a owl:NamedIndividual , :HotSpice , :Rhizome ;
-  :hasCommonName "Galangal" ;
-  :hasBotanicalName "Alpinia galanga" ;
-  :hasBotanicalName "Alpinia officinarum" .
-#
+	:hasBotanicalName "Alpinia galanga" , "Alpinia officinarum" ;
+	rdfs:label "Galangal" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#GaramMasala
 
 :GaramMasala a owl:NamedIndividual , :Mixture ;
-  :contains :BlackPeppercorn , :GreenCardamom , :Cinnamon , :Clove , :Coriander , :Cumin , :Mace , :Nutmeg , :Turmeric ;
-   :hasCommonName "Garam Masala" .
-#
+	:contains :BlackPeppercorn , :Cinnamon , :Clove , :Coriander , :Cumin , :GreenCardamom , :Mace , :Nutmeg , :Turmeric ;
+	rdfs:label "Garam Masala" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Garlic
 
 :Garlic a owl:NamedIndividual , :AromaticVegetable , :Bulb ;
-  :hasCommonName "Garlic" ;
-  :hasBotanicalName "Allium sativum" .
-#
+	:hasBotanicalName "Allium sativum" ;
+	rdfs:label "Garlic" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Ghee
 
-:Ghee a owl:NamedIndividual , :Fats ;
- :hasCommonName "Ghee" .
-#
+:Ghee a owl:NamedIndividual , :Fat ;
+	rdfs:label "Ghee" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Ginger
 
 :Ginger a owl:NamedIndividual , :HotSpice , :Rhizome ;
-  :hasCommonName "Ginger" ;
-  :hasBotanicalName "Zingiber officinale" .
-#
+	:hasBotanicalName "Zingiber officinale" ;
+	rdfs:label "Ginger" .
+# 
+# http://www.semanticweb.org/remkoboschker/ontologies/spice#GreenCardamom
+
+:GreenCardamom a owl:NamedIndividual , :AromaticSpice ;
+	:hasBotanicalName "Elettaria cardamomum" ;
+	rdfs:label "Green Cardamom" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#HerbesDeProvance
 
 :HerbesDeProvance a owl:NamedIndividual , :Mixture ;
-  :contains :Marjoram , :Oregano , :Rosemary , :Sage , :Tarragon , :Thyme ;
-  :hasCommonName "Herbes de Provance" .
-#
+	:contains :Marjoram , :Oregano , :Rosemary , :Sage , :Tarragon , :Thyme ;
+	rdfs:label "Herbes de Provance" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#IndianCuisine
 
 :IndianCuisine a owl:NamedIndividual , :AsianCuisine ;
-  :uses :BayLeaf , :GreenCardamom , :CayennePepper , :Cinnamon , :Coriander , :Cumin , :CurryLeaf , :CurryPowder , :Fenugreek , :GaramMasala , :Ghee , :Ginger , :Nutmeg , :Paprika , :Turmeric ;
-  :cuisineIsFromPlace dbr:India ;
-  :hasCommonName "Indian Cuisine" .
-#
+	:cuisineIsFromPlace dbr:India ;
+	:uses :BayLeaf , :CayennePepper , :Cinnamon , :Coriander , :Cumin , :CurryLeaf , :CurryPowder , :Fenugreek , :GaramMasala , :Ghee , :Ginger , :GreenCardamom , :Nutmeg , :Paprika , :Turmeric ;
+	rdfs:label "Indian Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ItalianCuisine
 
 :ItalianCuisine a owl:NamedIndividual , :MediterraneanCuisine , :RegionalCuisine ;
-  :uses :BayLeaf , :Carrot , :Celery , :FennelSeed , :FlatParsley , :Garlic , :OliveOil , :Onion , :Sage , :Soffrito ;
-  :cuisineIsFromPlace dbr:Italy ;
-  :hasCommonName "Italian Cuisine" .
-#
+	:cuisineIsFromPlace dbr:Italy ;
+	:uses :BayLeaf , :Carrot , :Celery , :FennelSeed , :FlatParsley , :Garlic , :OliveOil , :Onion , :Sage , :Soffrito ;
+	rdfs:label "Italian Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#KaffirLime
 
 :KaffirLime a owl:NamedIndividual , :Herb ;
-  :hasCommonName "Kaffir Lime" ;
-  :hasBotanicalName "Citrus hystrix" .
-#
+	:hasBotanicalName "Citrus hystrix" ;
+	rdfs:label "Kaffir Lime" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinAmericanCuisine
 
 :LatinAmericanCuisine a owl:NamedIndividual , :LatinAmericanCuisine , :RegionalCuisine ;
-  :uses :Cilantro , :LatinSoffrito ;
-  :cuisineIsFromPlace dbr:Latin_America ;
-  :hasCommonName "Latin American Cuisine" .
-
-#
+	:cuisineIsFromPlace dbr:Latin_America ;
+	:uses :Cilantro , :LatinSoffrito .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#LatinSoffrito
 
 :LatinSoffrito a owl:NamedIndividual , :Mixture ;
-  :contains :BellPepper , :Garlic , :OliveOil , :Onion ;
-  :hasCommonName "Latin Soffrito" .
-#
+	:contains :BellPepper , :Garlic , :OliveOil , :Onion ;
+	rdfs:label "Latin Soffrito" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Lemongrass
 
 :Lemongrass a owl:NamedIndividual , :AromaticSpice ;
-  :hasCommonName "Lemongrass" ;
-  :hasBotanicalName "Cymbopogon citratus" .
-#
+	:hasBotanicalName "Cymbopogon citratus" ;
+	rdfs:label "Lemongrass" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Mace
 
 :Mace a owl:NamedIndividual , :Aril , :AromaticSpice ;
-  :hasCommonName "Mace" ;
-  :hasBotanicalName "Myristica fragrans" .
-#
+	:hasBotanicalName "Myristica fragrans" ;
+	rdfs:label "Mace" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Marjoram
 
 :Marjoram a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Marjoram" ;
-  :hasBotanicalName "Origanum majorana" .
-#
+	:hasBotanicalName "Origanum majorana" ;
+	rdfs:label "Marjoram" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MediterraneanCuisine
 
 :MediterraneanCuisine a owl:NamedIndividual , :MediterraneanCuisine , :RegionalCuisine ;
-  :uses :Basil , :BayLeaf , :GreenCardamom , :Cinnamon , :Clove , :Coriander , :Ginger , :Oregano , :Rosemary , :Thyme ;
-  :cuisineIsFromPlace dbr:Mediterranean_Basin ;
-  :hasCommonName "Mediterranean Cuisine" .
-#
+	:cuisineIsFromPlace dbr:Mediterranean_Basin ;
+	:uses :Basil , :BayLeaf , :Cinnamon , :Clove , :Coriander , :Ginger , :GreenCardamom , :Oregano , :Rosemary , :Thyme .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MexicanCuisine
 
 :MexicanCuisine a owl:NamedIndividual , :LatinAmericanCuisine ;
-  :uses :ChiliPowder , :Cinnamon , :Coriander , :Cumin , :Garlic , :Oregano ;
-  :cuisineIsFromPlace dbr:Mexico ;
-  :hasCommonName "Mexican Cuisine" .
-#
+	:cuisineIsFromPlace dbr:Mexico ;
+	:uses :ChiliPowder , :Cinnamon , :Coriander , :Cumin , :Garlic , :Oregano ;
+	rdfs:label "Mexican Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MiddleEasternCuisine
 
 :MiddleEasternCuisine a owl:NamedIndividual , :MiddleEasternCuisine , :RegionalCuisine ;
-  :uses :BayLeaf , :GreenCardamom , :Cinnamon , :Clove , :Coriander , :Cumin , :Garlic , :Ginger , :Onion , :Oregano , :Saffron , :Scallion , :Zaatar ;
-  :cuisineIsFromPlace dbr:Middle_East ;
-  :hasCommonName "Middle Eastern Cuisine " .
-#
+	:cuisineIsFromPlace dbr:Middle_East ;
+	:uses :BayLeaf , :Cinnamon , :Clove , :Coriander , :Cumin , :Garlic , :Ginger , :GreenCardamom , :Onion , :Oregano , :Saffron , :Scallion , :Zaatar .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Mirepoix
 
 :Mirepoix a owl:NamedIndividual , :Mixture ;
-  :contains :Butter , :Carrot , :Celery , :Onion ;
-  :hasCommonName "Mirepoix" .
-#
+	:contains :Butter , :Carrot , :Celery , :Onion ;
+	rdfs:label "Mirepoix" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#MustardSeed
 
 :MustardSeed a owl:NamedIndividual , :HotSpice , :Seed ;
-  :hasCommonName "Mustard seed" ;
-  :hasBotanicalName "Brassica nigra" ;
-  :hasBotanicalName "Brassica juncea" ;
-  :hasBotanicalName "Brassica hirta" .
-#
+	:hasBotanicalName "Brassica hirta" , "Brassica juncea" , "Brassica nigra" ;
+	rdfs:label "Mustard seed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Nigella
 
 :Nigella a owl:NamedIndividual , :AromaticSpice , :Seed ;
-  :hasCommonName "Nigella" ;
-  :hasBotanicalName "Nigella sativa" .
-#
+	:hasBotanicalName "Nigella sativa" ;
+	rdfs:label "Nigella" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#NorthAfricanCuisine
 
 :NorthAfricanCuisine a owl:NamedIndividual , :MediterraneanCuisine ;
-  :uses :GreenCardamom , :Cinnamon , :Cumin , :Ginger , :Paprika , :RasElHanout , :Turmeric ;
-  :cuisineIsFromPlace dbr:North_Africa ;
-  :hasCommonName "North African Cuisine" .
-#
+	:cuisineIsFromPlace dbr:North_Africa ;
+	:uses :Cinnamon , :Cumin , :Ginger , :GreenCardamom , :Paprika , :RasElHanout , :Turmeric ;
+	rdfs:label "North African Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Nutmeg
 
 :Nutmeg a owl:NamedIndividual , :AromaticSpice , :Kernel ;
-  :hasCommonName "Nutmeg" ;
-  :hasBotanicalName "Myristica fragrans" .
-#
+	:hasBotanicalName "Myristica fragrans" ;
+	rdfs:label "Nutmeg" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#OliveOil
 
-:OliveOil a owl:NamedIndividual , :Fats ;
- :hasCommonName "Olive Oil" .
-#
+:OliveOil a owl:NamedIndividual , :Fat ;
+	rdfs:label "Olive Oil" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Onion
 
 :Onion a owl:NamedIndividual , :AromaticVegetable , :Bulb ;
-  :hasCommonName "Onion" ;
-  :hasBotanicalName "Allium cepa" .
-#
+	:hasBotanicalName "Allium cepa" ;
+	rdfs:label "Onion" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Oregano
 
 :Oregano a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Oregano" ;
-  :hasBotanicalName "Origanum vulgare" .
-#
+	:hasBotanicalName "Origanum vulgare" ;
+	rdfs:label "Oregano" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Paprika
 
 :Paprika a owl:NamedIndividual , :Berry , :MildSpice ;
-  :hasCommonName "Paprika" ;
-  :hasBotanicalName "Capsicum annuum" .
-#
+	:hasBotanicalName "Capsicum annuum" ;
+	rdfs:label "Paprika" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#PeanutOil
 
-:PeanutOil a owl:NamedIndividual , :Fats ;
-  :hasCommonName "Peanut Oil" .
-#
+:PeanutOil a owl:NamedIndividual , :Fat ;
+	rdfs:label "Peanut Oil" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#PoppySeed
 
 :PoppySeed a owl:NamedIndividual , :MildSpice , :Seed ;
-  :hasCommonName "Poppy Seed" ;
-  :hasBotanicalName "Papaver somniferum" .
-#
+	:hasBotanicalName "Papaver somniferum" ;
+	rdfs:label "Poppy Seed" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#RasElHanout
 
 :RasElHanout a owl:NamedIndividual , :Mixture ;
-  :contains :BlackPeppercorn , :GreenCardamom , :Cinnamon , :Clove , :Coriander , :Cumin , :Nutmeg , :Paprika , :Turmeric ;
-  :hasCommonName "Ras El Hanout" .
-#
+	:contains :BlackPeppercorn , :Cinnamon , :Clove , :Coriander , :Cumin , :GreenCardamom , :Nutmeg , :Paprika , :Turmeric ;
+	rdfs:label "Ras El Hanout" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Rosemary
 
 :Rosemary a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Rosemary" ;
-  :hasBotanicalName "Rosmarinus officinalis" .
-#
+	:hasBotanicalName "Rosmarinus officinalis" ;
+	rdfs:label "Rosemary" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Saffron
 
 :Saffron a owl:NamedIndividual , :Pistil ;
-  :hasCommonName "Saffron" ;
-  :hasBotanicalName "Crocus sativus" .
-#
+	:hasBotanicalName "Crocus sativus" ;
+	rdfs:label "Saffron" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Sage
 
 :Sage a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Sage" ;
-  :hasBotanicalName "Salvia officinalis " .
-#
+	:hasBotanicalName "Salvia officinalis " ;
+	rdfs:label "Sage" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Scallion
 
 :Scallion a owl:NamedIndividual , :AromaticVegetable , :Bulb ;
-  :hasCommonName "Scallion" ;
-  :hasBotanicalName "Allium Cepa" .
-#
+	:hasBotanicalName "Allium Cepa" ;
+	rdfs:label "Scallion" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Sesame
 
 :Sesame a owl:NamedIndividual , :Pseudocereal , :Seed ;
-  :hasCommonName "Sesame" ;
-  :hasBotanicalName "Sesamum indicum" .
-#
+	:hasBotanicalName "Sesamum indicum" ;
+	rdfs:label "Sesame" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Shallot
 
 :Shallot a owl:NamedIndividual , :AromaticVegetable , :Bulb ;
-  :hasCommonName "Shallot" ;
-  :hasBotanicalName "Allium cepa var. aggregatum" .
-#
+	:hasBotanicalName "Allium cepa var. aggregatum" ;
+	rdfs:label "Shallot" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Soffrito
 
 :Soffrito a owl:NamedIndividual , :Mixture ;
-  :contains :Carrot , :Celery , :OliveOil , :Onion ;
-  :hasCommonName "Soffrito" .
-#
+	:contains :Carrot , :Celery , :OliveOil , :Onion ;
+	rdfs:label "Soffrito" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#StarAnise
 
 :StarAnise a owl:NamedIndividual , :AromaticSpice , :Pericarp ;
-  :hasCommonName "Star Anise" ;
-  :hasBotanicalName "Illicium verum" .
-#
+	:hasBotanicalName "Illicium verum" ;
+	rdfs:label "Star Anise" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Sumac
 
 :Sumac a owl:NamedIndividual , :Berry , :MildSpice ;
-  :hasCommonName "Sumac" ;
-  :hasBotanicalName "Rhus coriaria" .
-#
+	:hasBotanicalName "Rhus coriaria" ;
+	rdfs:label "Sumac" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#SzechuanPeppercorn
 
 :SzechuanPeppercorn a owl:NamedIndividual , :Berry , :HotSpice ;
-  :hasCommonName "Szechuan Peppercorn" ;
-  :hasBotanicalName "Zanthoxylum simulans" ;
-  :hasBotanicalName "Zanthoxylum bungeanum" .
-#
+	:hasBotanicalName "Zanthoxylum bungeanum" , "Zanthoxylum simulans" ;
+	rdfs:label "Szechuan Peppercorn" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Tarragon
 
 :Tarragon a owl:NamedIndividual , :Herb , :Leaf ;
-  :hasCommonName "Tarragon" ;
-  :hasBotanicalName "Artemisia dracunculus" .
-#
+	:hasBotanicalName "Artemisia dracunculus" ;
+	rdfs:label "Tarragon" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#ThaiCuisine
 
 :ThaiCuisine a owl:NamedIndividual , :AsianCuisine ;
-  :uses :Basil , :GreenCardamom , :ChilliPepper , :Cilantro , :CoconutMilk , :Cumin , :CurryPowder , :Galangal , :Garlic , :Ginger , :KaffirLime , :Lemongrass , :PeanutOil , :Shallot , :Turmeric ;
-  :cuisineIsFromPlace dbr:Thailand ;
-  :hasCommonName "Thai Cuisine" .
-#
+	:cuisineIsFromPlace dbr:Thailand ;
+	:uses :Basil , :ChilliPepper , :Cilantro , :CoconutMilk , :Cumin , :CurryPowder , :Galangal , :Garlic , :Ginger , :GreenCardamom , :KaffirLime , :Lemongrass , :PeanutOil , :Shallot , :Turmeric ;
+	rdfs:label "Thai Cuisine" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Thyme
 
 :Thyme a owl:NamedIndividual , :Herb ;
-  :hasCommonName "Thyme" ;
-  :hasBotanicalName "Thymus vulgaris" .
-#
+	:hasBotanicalName "Thymus vulgaris" ;
+	rdfs:label "Thyme" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Turmeric
 
 :Turmeric a owl:NamedIndividual , :MildSpice , :Rhizome ;
-  :hasCommonName "Turmeric" ;
-  :hasBotanicalName "Curcuma longa" .
-#
+	:hasBotanicalName "Curcuma longa" ;
+	rdfs:label "Turmeric" .
+# 
 # http://www.semanticweb.org/remkoboschker/ontologies/spice#Zaatar
 
 :Zaatar a owl:NamedIndividual , :Mixture ;
-  :contains :Sesame , :Sumac , :Thyme ;
-  :hasCommonName "Zaatar" .
-#
-#
-#
+	:contains :Sesame , :Sumac , :Thyme ;
+	rdfs:label "Zaatar" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+
+:LatinAmericanCuisine rdfs:label "Latin American Cuisine" .
+# 
+
+:MediterraneanCuisine rdfs:label "Mediterranean Cuisine" .
+# 
+
+:MiddleEasternCuisine rdfs:label "Middle Eastern Cuisine " .
+# 
+# 
+# 
 # #################################################################
 # #
 # #    General axioms
 # #
 # #################################################################
-#
-#
+# 
+# 
 
 _:genid1 a owl:AllDisjointClasses ;
-  owl:members _:genid13 .
+	owl:members _:genid13 .
 
 _:genid13 a rdf:List ;
-  rdf:first :Aril ;
-  rdf:rest _:genid12 .
+	rdf:first :Aril ;
+	rdf:rest _:genid12 .
 
 _:genid12 a rdf:List ;
-  rdf:first :Bark ;
-  rdf:rest _:genid11 .
+	rdf:first :Bark ;
+	rdf:rest _:genid11 .
 
 _:genid11 a rdf:List ;
-  rdf:first :Berry ;
-  rdf:rest _:genid10 .
+	rdf:first :Berry ;
+	rdf:rest _:genid10 .
 
 _:genid10 a rdf:List ;
-  rdf:first :Bud ;
-  rdf:rest _:genid9 .
+	rdf:first :Bud ;
+	rdf:rest _:genid9 .
 
 _:genid9 a rdf:List ;
-  rdf:first :Bulb ;
-  rdf:rest _:genid8 .
+	rdf:first :Bulb ;
+	rdf:rest _:genid8 .
 
 _:genid8 a rdf:List ;
-  rdf:first :Kernel ;
-  rdf:rest _:genid7 .
+	rdf:first :Kernel ;
+	rdf:rest _:genid7 .
 
 _:genid7 a rdf:List ;
-  rdf:first :Leaf ;
-  rdf:rest _:genid6 .
+	rdf:first :Leaf ;
+	rdf:rest _:genid6 .
 
 _:genid6 a rdf:List ;
-  rdf:first :Pericarp ;
-  rdf:rest _:genid5 .
+	rdf:first :Pericarp ;
+	rdf:rest _:genid5 .
 
 _:genid5 a rdf:List ;
-  rdf:first :Pistil ;
-  rdf:rest _:genid4 .
+	rdf:first :Pistil ;
+	rdf:rest _:genid4 .
 
 _:genid4 a rdf:List ;
-  rdf:first :Rhizome ;
-  rdf:rest _:genid3 .
+	rdf:first :Rhizome ;
+	rdf:rest _:genid3 .
 
 _:genid3 a rdf:List ;
-  rdf:first :Root ;
-  rdf:rest _:genid2 .
+	rdf:first :Root ;
+	rdf:rest _:genid2 .
 
 _:genid2 a rdf:List ;
-  rdf:first :Seed ;
-  rdf:rest rdf:nil .
-#
-
-_:genid14 a owl:AllDisjointClasses ;
-  owl:members _:genid18 .
-
-_:genid18 a rdf:List ;
-  rdf:first :AromaticVegetable ;
-  rdf:rest _:genid17 .
-
-_:genid17 a rdf:List ;
-  rdf:first :Herb ;
-  rdf:rest _:genid16 .
-
-_:genid16 a rdf:List ;
-  rdf:first :Salt ;
-  rdf:rest _:genid15 .
-
-_:genid15 a rdf:List ;
-  rdf:first :Spice ;
-  rdf:rest rdf:nil .
-#
+	rdf:first :Seed ;
+	rdf:rest rdf:nil .
+# 
 # Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

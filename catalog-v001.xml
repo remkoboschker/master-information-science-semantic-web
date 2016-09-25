@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1474532730110" name="http://git-ainf.aau.at/debug_ontology#64286623018602" uri="spice.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1474532730110" name="http://git-ainf.aau.at/debug_ontology#64293560627059" uri="debug.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1474836486054" name="http://git-ainf.aau.at/debug_ontology#64293560627059" uri="debug.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1474836486054" name="http://www.semanticweb.org/remkoboschker/ontologies/spice" uri="spice.owl"/>
     </group>
 </catalog>
