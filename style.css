@@ -78,6 +78,7 @@ body {
 }
 
 pre code {
+  font-size: 0.8rem;
   word-wrap: normal;
 }
 
@@ -112,27 +113,27 @@ body {
   margin-bottom: 2.0202rem;
 }
 
-.typl8-beta, h1 {
+.typl8-beta, {
   font-size: 2.66667em;
   margin-bottom: 1.61616rem;
 }
 
-.typl8-gamma, h2 {
+.typl8-gamma, h1 {
   font-size: 2em;
   margin-bottom: 1.21212rem;
 }
 
-.typl8-delta, h3 {
+.typl8-delta, h2 {
   font-size: 1.33333em;
   margin-bottom: 0.80808rem;
 }
 
-.typl8-epsilon, h4 {
+.typl8-epsilon, h3 {
   font-size: 1.16667em;
   margin-bottom: 0.70707rem;
 }
 
-.typl8-zeta, h5 {
+.typl8-zeta, h4 {
   font-size: 1em;
   margin-bottom: 0.60606rem;
 }
@@ -174,6 +175,7 @@ pre code {
 }
 
 code {
+  font-size: 0.8rem;
   white-space: pre;
   font-family: monospace;
 }
